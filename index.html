@@ -32,6 +32,52 @@
             <p>CompuMundoHiperMegaRed nació en el año 1998 en el living de la familia Simpson, con la visión de revolucionar la manera en que la sociedad consume la súper autopista de la información.</p>
             Desde nuestros humildes comienzos disputando la línea telefónica con las llamadas del hogar, hemos crecido hasta convertirnos en un referente global. Como siempre dice nuestro Vicepresidente Junior: <em>"Si no sabe lo que vendemos, no importa, solo sepa que lo necesita"</em>.
         </section>
+       <!-- Botón principal que el usuario ve en la página -->
+<section id="contacto">
+    <h2>No se quede afuera del boom digital global: ¡forme parte de CompuMundoHiperMegaRed!</h2>
+    <button type="button" id="btn-abrir">Solicite su Conexión</button>
+</section>
+
+<!-- La Ventana Modal (al principio estará oculta con CSS más adelante) -->
+<div id="modal-contacto" class="modal">
+    <div class="contenido-modal">
+        <!-- Botón para cerrar la ventanita -->
+        <span class="btn-cerrar">&times;</span>
+        
+        <h2>Solicite su Conexión</h2>
+
+        <form>
+            <div>
+                <label for="nombre">Nombre del Cliente / Empresa:</label><br>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej: Bill Gates">
+            </div>
+
+            <br>
+
+            <div>
+                <label for="servicio">Servicio de Interés:</label><br>
+                <select id="servicio" name="servicio">
+                    <option value="dialup">Conexión Dial-Up Ultra Furia</option>
+                    <option value="exportacion">Exportación e Importación de Datos</option>
+                    <option value="asesoria">Asesoría VIP con Homero</option>
+                </select>
+            </div>
+
+            <br>
+
+            <div>
+                <label for="presupuesto">¿Cuánto dinero planea invertir? ($):</label><br>
+                <input type="number" id="presupuesto" name="presupuesto" placeholder="Ej: 50000" min="0">
+            </div>
+
+            <br>
+
+            <div>
+                <button type="submit">Enviar Solicitud de Compra</button>
+            </div>
+        </form>
+    </div>
+</div>
     </main>
     
 </body>
