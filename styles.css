@@ -1,0 +1,168 @@
+/* 1. VARIABLES GLOBALES (Tu paleta de colores de CompuMundoHiperMegaRed) */
+:root {
+    --color-principal: #0a2540;   /* Azul oscuro corporativo */
+    --color-secundario: #00d4b2;  /* Verde/Turquesa moderno */
+    --color-fondo: #f8f9fa;       /* Gris claro cómodo a la vista */
+    --color-texto: #2d3748;       /* Gris oscuro para leer bien */
+    --fuente-principal: Arial, sans-serif;
+}
+
+/* 2. RESET UNIVERSAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 3. ESTILOS BASE DE LA PÁGINA */
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}
+/* 4. ENCABEZADO Y MENÚ DE NAVEGACIÓN */
+header {
+    background-color: var(--color-principal); /* Usa el azul oscuro de :root */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilos para las palabras del menú */
+header nav a {
+    color: var(--color-secundario); /* Usa el turquesa de :root */
+    text-decoration: none;           /* Le saca el subrayado azul feo por defecto */
+    font-weight: bold;               /* Hace la letra más gruesa (negrita) */
+}
+/* 5. SECCIONES DE CONTENIDO */
+section {
+    max-width: 800px;       /* Ancho máximo cómodo para lectura */
+    margin: 30px auto;      /* Centra las secciones y les da espacio arriba y abajo */
+    padding: 20px;          /* Espacio interno para que el texto no toque los bordes */
+    background-color: white; /* Tarjetas blancas sobre el fondo gris claro */
+    border-radius: 8px;     /* Bordes suavemente redondeados */
+}
+
+/* Espaciado para los títulos de cada sección */
+section h2 {
+    color: var(--color-principal);
+    margin-bottom: 15px;    /* Separa el título del texto de abajo */
+}
+
+/* Espaciado para los párrafos */
+section p {
+    line-height: 1.6;       /* Espacio entre líneas de texto para que sea fácil de leer */
+    margin-bottom: 10px;
+}
+/* 6. BOTÓN DE CONTACTO */
+#contacto {
+    text-align: center; /* Centra el título y el botón */
+}
+
+/* Estilo para el botón principal */
+#btn-abrir {
+    background-color: var(--color-secundario);
+    color: var(--color-principal);
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer; /* Cambia el puntero a una manito al pasar el mouse */
+    margin-top: 15px;
+}
+
+/* Efecto al pasar el mouse por arriba del botón */
+#btn-abrir:hover {
+    opacity: 0.9;
+    transform: scale(1.02); /* Crece un poquitito */
+}
+/* 7. ESTILOS DE LA VENTANA MODAL */
+
+/* Fondo oscuro que tapa TODA la pantalla */
+.modal {
+    display: none;             /* Por defecto arranca OCULTA */
+    position: fixed;           /* Se queda fija aunque hagas scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo negro semi-transparente */
+    z-index: 1000;             /* Asegura que flote por encima de todo */
+}
+
+/* La tarjeta blanca en el centro */
+.contenido-modal {
+    background-color: white;
+    max-width: 500px;
+    margin: 10% auto;          /* Centrada en la pantalla */
+    padding: 30px;
+    border-radius: 8px;
+    position: relative;
+}
+
+/* La 'X' de cerrar arriba a la derecha */
+.btn-cerrar {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.btn-cerrar:hover {
+    color: black;
+}
+/* 8. ESTILOS DEL FORMULARIO DE LA MODAL */
+
+/* Cada fila o grupo del formulario */
+.contenido-modal form div {
+    margin-bottom: 15px; /* Separa un campo del otro */
+}
+
+/* Las etiquetas (labels) arriba de los campos */
+.contenido-modal label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--color-texto);
+}
+
+/* Entradas de texto, números y selectores */
+.contenido-modal input[type="text"],
+.contenido-modal input[type="number"],
+.contenido-modal select {
+    width: 100%;             /* Ocupan todo el ancho de la tarjeta */
+    padding: 10px;
+    border: 1px solid #ccc;  /* Borde gris fino */
+    border-radius: 4px;      /* Bordes ligeramente redondeados */
+    font-size: 14px;
+}
+
+/* El botón de enviar solicitud */
+.contenido-modal button[type="submit"] {
+    width: 100%;
+    background-color: var(--color-principal);
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contenido-modal button[type="submit"]:hover {
+    background-color: #143a60; /* Un azul un poquitito más claro */
+}
+/* 9. PIE DE PÁGINA (FOOTER) */
+footer {
+    background-color: var(--color-principal);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+    font-size: 14px;
+}
