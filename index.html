@@ -1,93 +1,197 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="CompuMundoHiperMegaRed: Soluciones informáticas, soporte técnico y desarrollo de software a medida."
+    />
+    <!-- Open Graph para Redes Sociales y WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="CompuMundoHiperMegaRed - Líderes en Internet"
+    />
+    <meta
+      property="og:description"
+      content="Ofrecemos la red de información más avanzada del planeta para empresarios exigentes."
+    />
+    <meta property="og:image" content="images/header-retro.png" />
     <title>CompuMundoHiperMegaRed</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="favicon.png">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+  </head>
+  <body>
     <header>
-        <h1>CompuMundoHiperMegaRed</h1>
-
+      <h1>CompuMundoHiperMegaRed</h1>
     </header>
     <main>
-        <section id="inicio">
-            <h2>Líderes globales en adquisición e importación de Internet.</h2>
-            <p>
-                Fundada por <strong>Homero Simpson</strong>, Vicepresidente Junior. Ofrecemos la red de información más avanzada del planeta para empresarios exigentes.
-            </p>
-            <nav>
-                <a href="#servicios">Servicios</a> | 
-                <a href="#historia">Quiénes Somos</a> | 
-                <a href="#contacto">Contacto</a>
-            </nav>
-        </section>
-        <section id="servicios">
-            <h2>Nuestros Servicios de Alta Tecnología</h2>
-            <ul>
-                <li><strong>Conexión Dial-Up Ultra Furia:</strong> Navegación a máxima velocidad con sonidos de módem 100% reales.</li>
-                <li><strong>Exportación e Importación de Datos:</strong> Enviamos paquetes de bytes a cualquier parte del mundo.</li>
-                <li><strong>Asesoría VIP con Homero:</strong> Aprenda a manejar el mercado digital sin tocar una sola tecla.</li>
-            </ul>
-        </section>
-        <section id="historia">
-            <h2>Nuestra Historia</h2>
-            <p>CompuMundoHiperMegaRed nació en el año 1998 en el living de la familia Simpson, con la visión de revolucionar la manera en que la sociedad consume la súper autopista de la información.</p>
-            <p>Desde nuestros humildes comienzos disputando la línea telefónica con las llamadas del hogar, hemos crecido hasta convertirnos en un referente global. Como siempre dice nuestro Vicepresidente Junior: <em>"Si no sabe lo que vendemos, no importa, solo sepa que lo necesita"</em>.</p>
-        </section>
-       <!-- Botón principal que el usuario ve en la página -->
-<section id="contacto">
-    <h2>No se quede afuera del boom digital global: ¡forme parte de CompuMundoHiperMegaRed!</h2>
-    <button type="button" id="btn-abrir">Solicite su Conexión</button>
-</section>
+      <section id="inicio">
+        <h2>Líderes globales en adquisición e importación de Internet.</h2>
+        <p>
+          Fundada por <strong>Homero Simpson</strong>, Vicepresidente Junior.
+          Ofrecemos la red de información más avanzada del planeta para
+          empresarios exigentes.
+        </p>
+        <nav>
+          <a href="#servicios">Servicios</a> |
+          <a href="#historia">Quiénes Somos</a> |
+          <a href="#liderazgo">Liderazgo</a>
+        </nav>
+      </section>
+      <section id="servicios">
+        <h2>Nuestros Planes de Alta Tecnología</h2>
+        <p>
+          Elegí el paquete que mejor se adapte a las necesidades de tu empresa o
+          residencia:
+        </p>
 
-<!-- La Ventana Modal (al principio estará oculta con CSS más adelante) -->
-<div id="modal-contacto" class="modal">
-    <div class="contenido-modal">
-        <!-- Botón para cerrar la ventanita -->
-        <span class="btn-cerrar">&times;</span>
-        
-        <h2>Solicite su Conexión</h2>
-
-        <form>
+        <div class="contenedor-planes">
+          <!-- PLAN 1 -->
+          <div class="tarjeta-plan" data-plan="Dial-Up Furia 56k">
             <div>
-                <label for="nombre">Nombre del Cliente / Empresa:</label><br>
-                <input type="text" id="nombre" name="nombre" placeholder="Ej: Bill Gates">
+              <span class="etiqueta-plan">ECONÓMICO</span>
+              <h3>Dial-Up Furia 56k</h3>
+              <p class="precio">$1.400 <span>/ mes</span></p>
+              <ul class="lista-beneficios">
+                <li>✓ Velocidad pura de 56 Kbps</li>
+                <li>✓ Sonidos de módem 100% reales</li>
+                <li>✓ Desconexión automática si llaman por teléfono</li>
+              </ul>
+            </div>
+            <!-- Texto sutil con flecha en vez de un botón grande -->
+            <div class="link-plan-sutil">Solicitar este plan &rarr;</div>
+          </div>
+
+          <!-- PLAN 2 -->
+          <div class="tarjeta-plan" data-plan="Pack Importación Byte">
+            <div>
+              <span class="etiqueta-plan">RECOMENDADO</span>
+              <h3>Pack Importación Byte</h3>
+              <p class="precio">$3.500 <span>/ mes</span></p>
+              <ul class="lista-beneficios">
+                <li>✓ Exportación de paquetes a todo el mundo</li>
+                <li>✓ Asesoría VIP con el Vicepresidente Junior</li>
+                <li>✓ Red de información sin tocar una sola tecla</li>
+              </ul>
+            </div>
+            <div class="link-plan-sutil">Solicitar este plan &rarr;</div>
+          </div>
+
+          <!-- PLAN 3 -->
+          <div class="tarjeta-plan" data-plan="HiperMegaRed Full">
+            <div>
+              <span class="etiqueta-plan">EMPRESARIAL</span>
+              <h3>HiperMegaRed Full</h3>
+              <p class="precio">$8.900 <span>/ mes</span></p>
+              <ul class="lista-beneficios">
+                <li>✓ Banda ancha para mandar e-mails ilimitados</li>
+                <li>✓ Soporte técnico atendido por Bill Gates</li>
+                <li>✓ Dominio personalizado .com</li>
+              </ul>
+            </div>
+            <div class="link-plan-sutil">Solicitar este plan &rarr;</div>
+          </div>
+        </div>
+      </section>
+      <section id="historia">
+        <h2>Nuestra Historia</h2>
+        <p>
+          CompuMundoHiperMegaRed nació en el año 1998 en el living de la familia
+          Simpson, con la visión de revolucionar la manera en que la sociedad
+          consume la súper autopista de la información.
+        </p>
+        <p>
+          Desde nuestros humildes comienzos disputando la línea telefónica con
+          las llamadas del hogar, hemos crecido hasta convertirnos en un
+          referente global. Como siempre dice nuestro Vicepresidente Junior:
+          <em
+            >"Si no sabe lo que vendemos, no importa, solo sepa que lo
+            necesita"</em
+          >.
+        </p>
+      </section>
+      <section id="liderazgo">
+        <h2>Nuestro Liderazgo</h2>
+        <div class="tarjeta-homero">
+          <h3>Homero Simpson — Vicepresidente Junior</h3>
+          <p>
+            Especialista en negocios internacionales y gestión de red sin tocar
+            una sola tecla.
+          </p>
+
+          <!-- El reproductor de video -->
+          <iframe
+            width="100%"
+            height="315"
+            src="https://www.youtube-nocookie.com/embed/CIG5gBEKe1Y?start=32"
+            title="Homero Simpson Vicepresidente Junior"
+            frameborder="0"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+      </section>
+      <!-- Botón principal que el usuario ve en la página -->
+
+      <!-- VENTANA MODAL DE CONTACTO / VENTAS -->
+      <div id="modal-contacto" class="modal">
+        <div class="contenido-modal">
+          <span class="btn-cerrar">&times;</span>
+          <h2>Solicitar Plan de Alta Tecnología</h2>
+          <p>
+            Completá tus datos y el equipo de Homero te contactará al instante.
+          </p>
+
+          <form id="form-presupuesto">
+            <div>
+              <label for="plan-seleccionado">Plan Elegido:</label>
+              <!-- Campo de texto de solo lectura para que no lo modifiquen por error -->
+              <input type="text" id="plan-seleccionado" name="plan" readonly />
             </div>
 
-            <br>
-
             <div>
-                <label for="servicio">Servicio de Interés:</label><br>
-                <select id="servicio" name="servicio">
-                    <option value="dialup">Conexión Dial-Up Ultra Furia</option>
-                    <option value="exportacion">Exportación e Importación de Datos</option>
-                    <option value="asesoria">Asesoría VIP con Homero</option>
-                </select>
+              <label for="nombre">Nombre Completo:</label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Ej: Ned Flanders"
+                required
+              />
             </div>
 
-            <br>
-
             <div>
-                <label for="presupuesto">¿Cuánto dinero planea invertir? ($):</label><br>
-                <input type="number" id="presupuesto" name="presupuesto" placeholder="Ej: 50000" min="0">
+              <label for="email">Correo Electrónico:</label>
+              <input
+                type="text"
+                id="email"
+                name="email"
+                placeholder="ejemplo@compumundo.com"
+                required
+              />
             </div>
 
-            <br>
-
-            <div>
-                <button type="submit">Enviar Solicitud de Compra</button>
-            </div>
-        </form>
-    </div>
-</div>
+            <button type="submit">¡Enviar Solicitud!</button>
+          </form>
+        </div>
+      </div>
     </main>
     <footer>
-       <p>&copy; 1998 CompuMundoHiperMegaRed. Todos los derechos reservados.</p>
-       <p>Avenida Siempre Viva 742, Springfield.</p>
+      <p>&copy; 1998 CompuMundoHiperMegaRed. Todos los derechos reservados.</p>
+      <p>Avenida Siempre Viva 742, Springfield.</p>
     </footer>
-<script src="script.js"></script>  
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

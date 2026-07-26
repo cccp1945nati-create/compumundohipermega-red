@@ -1,9 +1,11 @@
-/* 1. VARIABLES GLOBALES (Tu paleta de colores de CompuMundoHiperMegaRed) */
+/* 1. VARIABLES GLOBALES (Paleta Retro-Neón de CompuMundoHiperMegaRed) */
 :root {
-    --color-principal: #0a2540;   /* Azul oscuro corporativo */
-    --color-secundario: #00d4b2;  /* Verde/Turquesa moderno */
-    --color-fondo: #f8f9fa;       /* Gris claro cómodo a la vista */
-    --color-texto: #2d3748;       /* Gris oscuro para leer bien */
+    --color-principal: #00f2fe;   /* Turquesa neón para títulos, bordes y detalles */
+    --color-secundario: #4facfe;  /* Azul neón complementario */
+    --color-fondo: #0a0c10;       /* Fondo general oscuro */
+    --color-tarjeta: #0d1117;     /* Fondo de contenedores y secciones */
+    --color-borde: #1f293d;       /* Azul medio para marcos de videos e inputs */
+    --color-texto: #f0f6fc;       /* Texto claro y legible */
     --fuente-principal: Arial, sans-serif;
 }
 
@@ -20,41 +22,65 @@ body {
     background-color: var(--color-fondo);
     color: var(--color-texto);
 }
+
 /* 4. ENCABEZADO Y MENÚ DE NAVEGACIÓN */
 header {
-    background-color: var(--color-principal); /* Usa el azul oscuro de :root */
+    /* Mantenemos el azul oscuro de fondo como "respaldo" por si la imagen tarda en cargar */
+    background-color: var(--color-principal); 
+    
+    /* Imagen de fondo retro */
+    background-image: url('images/header-retro.png'); 
+    background-size: cover;          /* Cubre todo el área del header sin deformarse */
+    background-position: center;     /* Centra el dibujo */
+    background-repeat: no-repeat;    /* Evita que la foto se repita como mosaico */
+    
     color: white;
-    padding: 20px;
+    padding: 80px 20px;              /* Le damos más espacio arriba y abajo para que se luzca la imagen */
     text-align: center;
+}
+
+/* Sombra para que el título resalte bien sobre las estrellas del dibujo */
+header h1 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9), 
+                 0 0 20px rgba(0, 0, 0, 0.8);
 }
 
 /* Estilos para las palabras del menú */
 header nav a {
-    color: var(--color-secundario); /* Usa el turquesa de :root */
-    text-decoration: none;           /* Le saca el subrayado azul feo por defecto */
-    font-weight: bold;               /* Hace la letra más gruesa (negrita) */
+    color: var(--color-secundario);      /* Usa el turquesa de :root */
+    text-decoration: none;               /* Le saca el subrayado azul feo */
+    font-weight: bold;                   /* Hace la letra más gruesa (negrita) */
+    background-color: rgba(10, 37, 64, 0.7); /* Fondito oscuro transparente para mejorar lectura sobre la foto */
+    padding: 5px 10px;
+    border-radius: 4px;
 }
+
 /* 5. SECCIONES DE CONTENIDO */
 section {
-    max-width: 800px;       /* Ancho máximo cómodo para lectura */
-    margin: 30px auto;      /* Centra las secciones y les da espacio arriba y abajo */
-    padding: 20px;          /* Espacio interno para que el texto no toque los bordes */
-    background-color: white; /* Tarjetas blancas sobre el fondo gris claro */
-    border-radius: 8px;     /* Bordes suavemente redondeados */
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: var(--color-tarjeta); /* Ahora usa el azul oscuro #0d1117 */
+    border: 1px solid var(--color-borde);   /* Leve marco para definir la tarjeta */
+    border-radius: 8px;
+    color: var(--color-texto);              /* Hace que todo el texto sea claro y legible */
 }
 
-/* Espaciado para los títulos de cada sección */
+/* Títulos de las secciones */
 section h2 {
-    color: var(--color-principal);
-    margin-bottom: 15px;    /* Separa el título del texto de abajo */
+    color: var(--color-principal);          /* Turquesa brillante neón */
+    margin-bottom: 15px;
 }
 
-/* Espaciado para los párrafos */
+/* Texto de los párrafos */
 section p {
-    line-height: 1.6;       /* Espacio entre líneas de texto para que sea fácil de leer */
+    color: var(--color-texto);              /* Blanco suave para leer sin esfuerzo */
+    line-height: 1.6;
     margin-bottom: 10px;
 }
-/* 6. BOTÓN DE CONTACTO */
+
+/* 6. BOTÓN DE CONTACTO */
 #contacto {
     text-align: center; /* Centra el título y el botón */
 }
@@ -77,43 +103,131 @@ section p {
     opacity: 0.9;
     transform: scale(1.02); /* Crece un poquitito */
 }
-/* 7. ESTILOS DE LA VENTANA MODAL */
 
-/* Fondo oscuro que tapa TODA la pantalla */
+/* 7. ESTILOS DE LA VENTANA MODAL (RETRO-NEÓN) */
+
+/* Fondo oscuro translúcido que cubre toda la pantalla */
 .modal {
-    display: none;             /* Por defecto arranca OCULTA */
-    position: fixed;           /* Se queda fija aunque hagas scroll */
+    display: none;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Fondo negro semi-transparente */
-    z-index: 1000;             /* Asegura que flote por encima de todo */
+    background-color: rgba(0, 0, 0, 0.85); /* Un poco más oscuro para dar enfoque */
+    backdrop-filter: blur(4px);            /* Difumina suavemente el fondo */
+    z-index: 1000;
 }
 
-/* La tarjeta blanca en el centro */
+/* La tarjeta centrada de la modal */
 .contenido-modal {
-    background-color: white;
-    max-width: 500px;
-    margin: 10% auto;          /* Centrada en la pantalla */
+    background-color: var(--color-tarjeta); /* El azul noche de tus tarjetas */
+    border: 2px solid var(--color-principal);/* Borde neón turquesa */
+    border-radius: 12px;
+    max-width: 480px;
+    margin: 8% auto;
     padding: 30px;
-    border-radius: 8px;
     position: relative;
+    box-shadow: 0 0 25px rgba(0, 242, 254, 0.25); /* Resplandor neón */
+    color: var(--color-texto);
 }
 
-/* La 'X' de cerrar arriba a la derecha */
+/* Título de la modal */
+.contenido-modal h2 {
+    color: var(--color-principal);
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    text-shadow: 0 0 8px rgba(0, 242, 254, 0.4);
+}
+
+.contenido-modal p {
+    color: var(--color-texto);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    opacity: 0.85;
+}
+
+/* Botón 'X' para cerrar */
 .btn-cerrar {
     position: absolute;
     top: 15px;
     right: 20px;
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
-    color: #aaa;
+    color: var(--color-texto);
     cursor: pointer;
+    transition: color 0.2s ease;
 }
 
 .btn-cerrar:hover {
-    color: black;
+    color: var(--color-principal);
+}
+
+
+/* 8. CAMPOS E INPUTS DEL FORMULARIO */
+
+.contenido-modal form div {
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+/* Las etiquetas arriba de los campos (Nombres, Email, etc.) */
+.contenido-modal label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: var(--color-principal); /* Turquesa bien visible */
+}
+
+/* Entradas de texto e inputs */
+.contenido-modal input[type="text"],
+.contenido-modal input[type="email"],
+.contenido-modal select {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-fondo); /* Fondo negro/oscuro del input */
+    border: 1px solid var(--color-borde);
+    border-radius: 6px;
+    color: var(--color-texto);            /* Letras blancas claras al escribir */
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilo para el input de solo lectura (Plan Elegido) */
+.contenido-modal input[readonly] {
+    border-color: var(--color-principal);
+    background-color: rgba(0, 242, 254, 0.05);
+    font-weight: bold;
+    color: var(--color-principal);
+}
+
+/* Efecto al hacer clic para escribir en un campo (Foco) */
+.contenido-modal input[type="text"]:focus,
+.contenido-modal input[type="email"]:focus {
+    border-color: var(--color-principal);
+    box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+}
+
+/* Botón de Enviar Solicitud */
+.contenido-modal button[type="submit"] {
+    width: 100%;
+    background-color: var(--color-principal);
+    color: var(--color-fondo);
+    border: none;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contenido-modal button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
 }
 /* 8. ESTILOS DEL FORMULARIO DE LA MODAL */
 
@@ -157,6 +271,7 @@ section p {
 .contenido-modal button[type="submit"]:hover {
     background-color: #143a60; /* Un azul un poquitito más claro */
 }
+
 /* 9. PIE DE PÁGINA (FOOTER) */
 footer {
     background-color: var(--color-principal);
@@ -165,4 +280,149 @@ footer {
     padding: 15px;
     margin-top: 40px;
     font-size: 14px;
+}
+/* TARJETA CON ESTILO RETRO-INFORMÁTICO */
+.tarjeta-homero {
+    background-color: var(--color-tarjeta);
+    border: 2px solid var(--color-principal);
+    border-radius: 10px;
+    padding: 25px;
+    margin-top: 20px;
+    color: var(--color-texto);
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.2); 
+}
+
+/* Título de Homero */
+.tarjeta-homero h3 {
+    color: var(--color-principal);
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    text-shadow: 0 0 5px rgba(0, 242, 254, 0.4);
+}
+
+/* MARCO DEL VIDEO */
+.tarjeta-homero iframe {
+    border: 2px solid var(--color-borde);
+    border-radius: 6px;
+    margin-top: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+/* CONTENEDOR DE PLANES (GRILLA) */
+.contenedor-planes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+/* TARJETA DE PLAN INDIVIDUAL (AHORA TODA LA CAJA ES CLICKEABLE) */
+.tarjeta-plan {
+    background-color: var(--color-tarjeta);
+    border: 2px solid var(--color-borde);
+    border-radius: 12px;
+    padding: 30px;
+    flex: 1 1 280px;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    
+    /* Le da suavidad a los efectos de brillo y movimiento */
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Cambia el cursor a la manito en toda la superficie de la caja */
+    cursor: pointer; 
+}
+
+/* EFECTO HOVER: EL BRILLO DINÁMICO AL PASAR EL MOUSE POR CUALQUIER CAJA */
+.tarjeta-plan:hover {
+    transform: translateY(-8px) scale(1.02); /* Se eleva un poquito */
+    border-color: var(--color-principal);   /* El borde pasa a turquesa brillante */
+    box-shadow: 0 10px 30px rgba(0, 242, 254, 0.35); /* Resplandor neón */
+}
+
+/* Títulos y Precios: Se encienden cuando estás sobre la tarjeta */
+.tarjeta-plan:hover h3,
+.tarjeta-plan:hover .precio {
+    color: var(--color-principal);
+    text-shadow: 0 0 8px rgba(0, 242, 254, 0.4);
+}
+
+/* ETIQUETA SUPERIOR DE CADA PLAN */
+.etiqueta-plan {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: var(--color-principal);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+/* PRECIOS */
+.tarjeta-plan .precio {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-principal);
+    margin: 15px 0;
+    transition: color 0.3s ease;
+}
+
+.tarjeta-plan .precio span {
+    font-size: 0.9rem;
+    color: var(--color-texto);
+    opacity: 0.7;
+}
+
+/* LISTA DE BENEFICIOS */
+.lista-beneficios {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.lista-beneficios li {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    color: var(--color-texto);
+}
+
+/* EL BOTÓN VISUAL (QUE REACCIONA AL HOVER DE LA TARJETA) */
+.ver-plan-visual {
+    background-color: transparent;
+    border: 2px solid var(--color-principal);
+    color: var(--color-principal);
+    padding: 12px;
+    font-weight: bold;
+    border-radius: 6px;
+    text-align: center;
+    pointer-events: none; /* Asegura que el clic lo reciba la caja entera */
+    transition: all 0.3s ease;
+}
+
+.tarjeta-plan:hover .ver-plan-visual {
+    background-color: var(--color-principal);
+    color: var(--color-fondo);
+}
+/* CALL TO ACTION SUTIL AL PIE DE LA TARJETA */
+.link-plan-sutil {
+    color: var(--color-principal);
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+/* Al pasar el mouse, brilla y la flecha se desplaza un poquitito */
+.tarjeta-plan:hover .link-plan-sutil {
+    opacity: 1;
+    transform: translateX(5px);
+    text-shadow: 0 0 5px rgba(0, 242, 254, 0.6);
 }
